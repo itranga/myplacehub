@@ -1,70 +1,27 @@
-import {
-  Component,
-  View,
-  Inject,
-  OnInit
-} from 'angular2/core';
-
-import {
-  Validators,
-  FormBuilder,
-  ControlGroup,
-  Control
-} from 'angular2/common';
-
+import {Component, Inject , Input} from 'angular2/core';
+import {SearchComponent} from '../components/search';
+import {CmsComponent} from '../components/cms'
+import {MenuComponent} from '../components/menu'
 import {TodoService} from '../services/todo-service';
 
-type Todo = {
-  todoMessage: string;
-  _id: string;
-}
+
+
+
 
 @Component({
-  selector: 'todo-cmp',
-  templateUrl: 'client/dev/todo/templates/todo.html',
-  styleUrls: ['client/dev/todo/styles/todo.css'],
-  providers: [TodoService]
+    selector: 'body-cmp',
+    templateUrl: 'client/dev/todo/templates/body.html',
+    styleUrls: ['client/dev/todo/styles/todo.css'],
+    providers: [TodoService],
+    directives: [SearchComponent, CmsComponent, MenuComponent]
 })
-export class TodoCmp implements OnInit {
-  title: string = "ng2do";
-  todos: Todo[] = [];
-  todoForm: ControlGroup;
 
-  constructor(@Inject(FormBuilder) fb:FormBuilder, @Inject(TodoService) private _todoService: TodoService) {
-    this.todoForm = fb.group({
-      "todoMessage": ["", Validators.required]
-    });
-  }
+export class TodoCmp{
+    
+    
 
-  ngOnInit() {
-    this._getAll();
-  }
 
-  private _getAll():void {
-    this._todoService
-        .getAll()
-        .subscribe((todos) => {
-          this.todos = todos;
-        });
-  }
 
-  add(message:string):void {
-    this._todoService
-        .add(message)
-        .subscribe((m) => {
-          this.todos.push(m);
-          (<Control>this.todoForm.controls['todoMessage']).updateValue("");
-        });
-  }
 
-  remove(id:string):void {
-    this._todoService
-      .remove(id)
-      .subscribe(() => {
-        this.todos.forEach((t, i) => {
-          if (t._id === id)
-            return this.todos.splice(i, 1);
-        });
-      })
-  }
 }
+

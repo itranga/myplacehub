@@ -39,6 +39,6 @@ todo_model_1.default.statics.deleteTodo = function (id) {
         });
     });
 };
-var Todo = mongoose.model('Todo', todo_model_1.default);
+var Todo = mongoose.model('City', todo_model_1.default);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Todo;

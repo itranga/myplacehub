@@ -1,6 +1,4 @@
 'use strict';
-if ('production' === process.env.NODE_ENV)
-    require('newrelic');
 var PORT = process.env.PORT || 3333;
 var express = require('express');
 var os = require('os');

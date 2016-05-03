@@ -1,7 +1,8 @@
 "use strict";
 var mongoose = require('mongoose');
 var _todoSchema = {
-    todoMessage: { type: String, required: true, trim: true },
+    name: { type: String, required: true, trim: true },
+    url: { type: String, required: true, trim: true },
     createdAt: { type: Date, default: Date.now }
 };
 Object.defineProperty(exports, "__esModule", { value: true });

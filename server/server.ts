@@ -1,9 +1,12 @@
 'use strict';
 
-if ('production' === process.env.NODE_ENV)
-    require('newrelic');
 
-var PORT = process.env.PORT || 3333;
+
+//var PORT = process.env.PORT || 3333;
+
+var PORT =  process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+
 
 import * as express from 'express';
 import * as os from 'os';
@@ -12,7 +15,8 @@ import {DBConfig} from './config/db.conf';
 import {Routes} from './routes/index';
 
 const app = express();
-const server = app.listen(PORT);
+const server = app.listen(PORT ,  server_ip_address);
+
 
 RoutesConfig.init(app, express);
 DBConfig.init();

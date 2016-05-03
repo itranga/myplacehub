@@ -1,7 +1,8 @@
 import * as mongoose from 'mongoose';
 
 const _todoSchema = {
-    todoMessage: {type: String, required: true, trim: true},
+    name: {type: String, required: true, trim: true},
+    url: {type: String, required: true, trim: true},
     createdAt: {type: Date, default: Date.now}
 }
 

@@ -46,6 +46,6 @@ todoSchema.statics.deleteTodo = (id:string):Promise<any> => {
     });
 }
 
-let Todo = mongoose.model('Todo', todoSchema);
+let Todo = mongoose.model('City', todoSchema);
 
 export default Todo;

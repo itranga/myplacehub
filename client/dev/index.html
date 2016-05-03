@@ -1,24 +1,46 @@
 <!doctype html>
-<html>
-  <head>
-    <base href="/" >
+<html lang="en">
+
+<head>
+    <base href="/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <link rel="shortcut icon" type="image/ico" href="favicon.png" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="client/dev/todo/styles/font-awesome.min.css" rel="stylesheet">
+    <link href="client/dev/todo/styles/main.css" rel="stylesheet">
+    <link href="client/dev/todo/styles/responsive.css" rel="stylesheet">
+
+
+
+    <!-- Main style sheet -->
+    <link href="client/dev/todo/styles/style.css" rel="stylesheet">
+
+
+    <link rel="shortcut icon" href="client/dev/todo/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="client/dev/todo/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="client/dev/todo/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="client/dev/todo/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="client/dev/todo/images/ico/apple-touch-icon-57-precomposed.png">
+
+
 
     <title>ng2do</title>
-  </head>
-  <body>
+</head>
 
-    <todo-cmp></todo-cmp>
+<body>
+
+    <body-cmp></body-cmp>
+
 
     <script src="node_modules/systemjs/dist/system.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script>
-      System.config({
-                      defaultJSExtensions: true
-                    });
+        System.config({
+                defaultJSExtensions: true
+            });
     </script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
@@ -26,9 +48,20 @@
     <script src="node_modules/angular2/bundles/http.js"></script>
     <script src="node_modules/angular2/bundles/router.js"></script>
 
+    <!-- ## ADD THE FOLLOWING LINE  ## -->
+    <script src="node_modules/angular2-google-maps/bundles/angular2-google-maps.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+
+
     <script>
-      System.import("client/dev/index.js");
+        System.import("client/dev/index.js");
     </script>
 
-  </body>
+</body>
+
 </html>

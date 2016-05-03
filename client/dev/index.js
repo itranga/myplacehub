@@ -2,5 +2,7 @@
 "use strict";
 var browser_1 = require('angular2/platform/browser');
 var http_1 = require('angular2/http');
-var todo_cmp_1 = require('./todo/components/todo-cmp');
-browser_1.bootstrap(todo_cmp_1.TodoCmp, [http_1.HTTP_PROVIDERS]);
+var core_1 = require("angular2/core");
+var main_1 = require('./todo/components/main');
+core_1.enableProdMode();
+browser_1.bootstrap(main_1.MainCmp, [http_1.HTTP_PROVIDERS]);
